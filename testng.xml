@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All sprints">
 
-<suite-files>
-    <suite-file path="Sprint1.xml">  </suite-file>
-    <suite-file path="Sprint2.xml">  </suite-file>
+    <suite-files>
+        <suite-file path="Sprint1.xml"></suite-file>
+        <suite-file path="Sprint2.xml"></suite-file>
 
-</suite-files>
+    </suite-files>
 </suite>
 
 

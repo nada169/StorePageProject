@@ -3,40 +3,26 @@
 <suite name="Sprint 2">
     <parameter name="browsername" value=""></parameter>
 
-
-<!--    <test name="Select Categories" >-->
-<!--        <classes>-->
-<!--            <class name="testcases.HomePage_Base">-->
-
-<!--                <methods>-->
-<!--                    <include name="SelectCategories_P" />-->
-
-<!--                </methods>-->
-<!--            </class>-->
-
-<!--        </classes>-->
-<!--</test>-->
-        <test name="Select Categories" >
-            <classes>
-                <class name="testcases.HomePage_Base">
-
-                    <methods>
-                        <include name="verifyHoverRandomCategory_P" />
-
-                    </methods>
-                </class>
-
-            </classes>
-    </test>
-
-
-
-    <test name="Add Products To Cart" >
+    <test name="Select Categories">
         <classes>
             <class name="testcases.HomePage_Base">
 
                 <methods>
-                    <include name="AddProductToCart_P" />
+                    <include name="verifyHoverRandomCategory_P"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+    <test name="Add Products To Cart">
+        <classes>
+            <class name="testcases.HomePage_Base">
+
+                <methods>
+                    <include name="AddProductToCart_P"/>
 
                 </methods>
             </class>
@@ -46,12 +32,12 @@
 
     </test>
 
-    <test name="Wishlist" >
+    <test name="Wishlist">
         <classes>
             <class name="testcases.HomePage_Base">
 
                 <methods>
-                    <include name="AddToWishlist_P" />
+                    <include name="AddToWishlist_P"/>
 
                 </methods>
             </class>
@@ -60,12 +46,12 @@
 
 
     </test>
-    <test name="Comparelist" >
+    <test name="Comparelist">
         <classes>
             <class name="testcases.HomePage_Base">
 
                 <methods>
-                    <include name="AddtiontoComparelist" />
+                    <include name="AddtiontoComparelist"/>
 
                 </methods>
             </class>
@@ -76,9 +62,7 @@
     </test>
 
 
-
-
-    <test name="Checkout" >
+    <test name="Checkout">
         <classes>
             <class name="testcases.HomePage_Base">
 

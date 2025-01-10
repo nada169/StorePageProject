@@ -8,10 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageBase {
-    WebDriver driver ;
-    public PageBase (WebDriver driver){
-        PageFactory.initElements(driver,this);
-        this.driver=driver;
+    WebDriver driver;
+
+    public PageBase(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
 
 
@@ -21,13 +22,13 @@ public class PageBase {
     WebElement btn;
 
 
-    public void SearchProduct(){
+    public void SearchProduct() {
         searchelement.sendKeys("iPod Touch");
         btn.click();
     }
 
 
-    public void CurrencyClick (int c){
+    public void CurrencyClick(int c) {
         System.out.println("Currency");
         System.out.println(c);
         driver.findElement(By.xpath("//form/div/button[@data-toggle='dropdown']")).click();
@@ -37,7 +38,7 @@ public class PageBase {
     }
 
 
-       public static void hoveWebElement(WebDriver driver, WebElement element){
+    public static void hoveWebElement(WebDriver driver, WebElement element) {
         //Creating object of an Actions class
         Actions action = new Actions(driver);
 
@@ -45,7 +46,6 @@ public class PageBase {
         action.moveToElement(element).perform();
         element.click();
     }
-
 
 
 }

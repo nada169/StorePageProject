@@ -6,13 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.List;
-import java.util.Random;
-
 import static pages.PageBase.hoveWebElement;
 
 public class Homepage {
@@ -104,8 +97,6 @@ public class Homepage {
     WebElement Confirm_Button;
 
 
-
-
     public void GetLoginPage() {
         X.click();
         Y.click();
@@ -159,19 +150,14 @@ public class Homepage {
         lnam.sendKeys(L);
         Cname.sendKeys(C);
         Adress1.sendKeys(A);
-        // Cname.sendKeys(C);
         vvvv.sendKeys(City);
         P_code.sendKeys(Postcode);
         Thread.sleep(3000);
         Select selectCountry = new Select(countryDropdown);
-
-        selectCountry.selectByIndex(3); //
-
+        selectCountry.selectByIndex(3);
         Thread.sleep(3000);
         Select selectRegion = new Select(Regiondropdown);
-
         selectRegion.selectByIndex(1);
-
         Continue.click();
         Continue_Paymentaddress.click();
         Continue_ShipingAddress.click();
@@ -188,21 +174,21 @@ public class Homepage {
 
     public String GetSucessMessage() {
 
-    WebElement message= driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
-    String message1=message.getText();
-    String filteredText = message1.split("!")[0] + "!";
-    System.out.println(filteredText);
-    return filteredText;
+        WebElement message = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+        String message1 = message.getText();
+        String filteredText = message1.split("!")[0] + "!";
+        System.out.println(filteredText);
+        return filteredText;
     }
 
     public void hoverRandomCategoryFromHomePAge(int index) throws InterruptedException {
         System.out.println("Main");
         System.out.println(index);
 
-        WebElement category=driver.findElement(By.xpath("(//div/ul[@class='nav navbar-nav']/li)["+index+"]"));
+        WebElement category = driver.findElement(By.xpath("(//div/ul[@class='nav navbar-nav']/li)[" + index + "]"));
 
 
-        hoveWebElement(driver,category);
+        hoveWebElement(driver, category);
         Thread.sleep(5000);
 
 

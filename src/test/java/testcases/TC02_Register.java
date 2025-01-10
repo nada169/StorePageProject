@@ -3,7 +3,6 @@ package testcases;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import pages.Homepage;
-import pages.LoginPage;
 import pages.RegisterationPage;
 
 import static drivers.DriverHolder.getDriver;
@@ -16,27 +15,25 @@ public class TC02_Register extends TestBase {
     String firstName = generateRandomFirstName();
     String lastName = faker.name().lastName();
     static String email = faker.internet().emailAddress();
-    String phone=  generateRandomPhoneNumber();
+    String phone = generateRandomPhoneNumber();
     static String password = faker.internet().password(8, 16);  // Password length between 8 and 16 characters
     String confirmPassword = password;
 
 
     Homepage home;
-    RegisterationPage register ;
+    RegisterationPage register;
 
-    @Test (priority = 1)
-        public void RegisterWithValidData_P(){
+    @Test(priority = 1)
+    public void RegisterWithValidData_P() {
 
-         home =new Homepage(getDriver());
-         register=new RegisterationPage(getDriver());
-         home.GetRegisteration();
-         register.Generatedata(firstName,phone,lastName,email,password,confirmPassword);
-         home.Getlogout();
+        home = new Homepage(getDriver());
+        register = new RegisterationPage(getDriver());
+        home.GetRegisteration();
+        register.Generatedata(firstName, phone, lastName, email, password, confirmPassword);
+        home.Getlogout();
 
 
-
-        }
-
+    }
 
 
 }

@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Homepage;
 import pages.LoginPage;
-import pages.RegisterationPage;
-
 import static drivers.DriverHolder.getDriver;
 
 public class TC01_Login extends TestBase {
@@ -16,18 +14,17 @@ public class TC01_Login extends TestBase {
     @Test(priority = 2)
     public void LoginWithValidData_P() throws InterruptedException {
 
-        homeobj =new Homepage(getDriver());
+        homeobj = new Homepage(getDriver());
 
 
         homeobj.GetLoginPage();
-        loginobj= new LoginPage(getDriver());
+        loginobj = new LoginPage(getDriver());
 
-        loginobj.Loginform(TC02_Register.email ,TC02_Register.password);
+        loginobj.Loginform(TC02_Register.email, TC02_Register.password);
         Thread.sleep(2000);
         Assert.assertTrue(getDriver().getPageSource().contains("Logout"));
 
         homeobj.Getlogout();
-
 
 
     }

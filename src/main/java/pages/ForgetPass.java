@@ -5,17 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ForgetPass  {
+public class ForgetPass {
 
 
-
-    public ForgetPass (WebDriver driver){
-        PageFactory.initElements(driver,this);
+    public ForgetPass(WebDriver driver) {
+        PageFactory.initElements(driver, this);
 
     }
 
 
-    @FindBy (xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=account/forgotten']")
+    @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=account/forgotten']")
     WebElement forgetten;
     @FindBy(id = "input-email")
     WebElement emailelement;
@@ -24,14 +23,10 @@ public class ForgetPass  {
     WebElement submitbtn;
 
 
-
-    public void ForgePassClick(String e1){
+    public void ForgePassClick(String e1) {
         forgetten.click();
         emailelement.sendKeys(e1);
         submitbtn.click();
-
-
-
 
 
     }

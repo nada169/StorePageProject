@@ -1,7 +1,6 @@
 package testcases;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
@@ -11,23 +10,23 @@ import static drivers.DriverHolder.getDriver;
 import static util.UtilityCodes.generateRandomInt;
 import static util.UtilityCodes.getRandomCurrencyIndex;
 
-public class HomePage_Base extends  TestBase {
+public class HomePage_Base extends TestBase {
     Homepage hometestobj;
     LoginPage loginpageobj;
     PageBase pageobj;
-    SoftAssert soft =new SoftAssert();
-    int index=generateRandomInt(8);
+    SoftAssert soft = new SoftAssert();
+    int index = generateRandomInt(8);
 
 
     @Test
     public void SearchProduct_P() throws InterruptedException {
-        hometestobj =new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
         hometestobj.GetLoginPage();
-        loginpageobj =new LoginPage(getDriver());
-        loginpageobj.Loginform(TC02_Register.email,TC02_Register.password);
+        loginpageobj = new LoginPage(getDriver());
+        loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
 
-        pageobj =new PageBase(getDriver());
+        pageobj = new PageBase(getDriver());
         pageobj.SearchProduct();
         Thread.sleep(3000);
         soft.assertTrue(getDriver().getPageSource().contains("Add to Cart"));
@@ -36,16 +35,17 @@ public class HomePage_Base extends  TestBase {
 
 
     }
+
     @Test
     public void ChangeCurrency_P() throws InterruptedException {
 
-       hometestobj =new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
         hometestobj.GetLoginPage();
-        loginpageobj =new LoginPage(getDriver());
-        loginpageobj.Loginform(TC02_Register.email,TC02_Register.password);
-        pageobj =new PageBase(getDriver());
-        int random =getRandomCurrencyIndex();
+        loginpageobj = new LoginPage(getDriver());
+        loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
+        pageobj = new PageBase(getDriver());
+        int random = getRandomCurrencyIndex();
         pageobj.CurrencyClick(random);
         Thread.sleep(3000);
 
@@ -56,84 +56,81 @@ public class HomePage_Base extends  TestBase {
     @Test
     public void verifyHoverRandomCategory_P() throws InterruptedException {
 
-        hometestobj =new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
-         hometestobj.GetLoginPage();
-         loginpageobj = new LoginPage(getDriver());
+        hometestobj.GetLoginPage();
+        loginpageobj = new LoginPage(getDriver());
 
-        loginpageobj.Loginform(TC02_Register.email ,TC02_Register.password);
+        loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
         hometestobj.hoverRandomCategoryFromHomePAge(index);
         Thread.sleep(3000);
 
     }
 
 
-
-
-
-
-        @Test
-        public void AddProductToCart_P() throws InterruptedException {
-
-            hometestobj = new Homepage(getDriver());
-
-
-            hometestobj .GetLoginPage();
-            loginpageobj = new LoginPage(getDriver());
-
-            loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
-
-            hometestobj .GetHomepage();
-            pageobj = new PageBase(getDriver());
-            pageobj.SearchProduct();
-
-            hometestobj .Getproducts_Add();
-
-            Thread.sleep(3000);
-          //  Assert.assertTrue(driver.getPageSource().contains(" Success"));
-            Assert.assertEquals(hometestobj .GetSucessMessage(),"Success: You have added iPod Touch to your shopping cart!");
-
-
-        }
     @Test
-    public void AddToWishlist_P() throws InterruptedException {
+    public void AddProductToCart_P() throws InterruptedException {
 
-        hometestobj  = new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
 
-        hometestobj .GetLoginPage();
+        hometestobj.GetLoginPage();
         loginpageobj = new LoginPage(getDriver());
 
         loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
 
-        hometestobj .GetHomepage();
+        hometestobj.GetHomepage();
         pageobj = new PageBase(getDriver());
         pageobj.SearchProduct();
 
-        hometestobj .Getproducts_Wishlist();
+        hometestobj.Getproducts_Add();
 
         Thread.sleep(3000);
-        soft.assertEquals(hometestobj .GetSucessMessage(),"Success: You have added iPod Touch to your wish list!");
+        Assert.assertEquals(hometestobj.GetSucessMessage(), "Success: You have added iPod Touch to your shopping cart!");
+
 
     }
-@Test
+
+    @Test
+    public void AddToWishlist_P() throws InterruptedException {
+
+        hometestobj = new Homepage(getDriver());
+
+
+        hometestobj.GetLoginPage();
+        loginpageobj = new LoginPage(getDriver());
+
+        loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
+
+        hometestobj.GetHomepage();
+        pageobj = new PageBase(getDriver());
+        pageobj.SearchProduct();
+
+        hometestobj.Getproducts_Wishlist();
+
+        Thread.sleep(3000);
+        soft.assertEquals(hometestobj.GetSucessMessage(), "Success: You have added iPod Touch to your wish list!");
+
+    }
+
+    @Test
     public void AddtiontoComparelist() throws InterruptedException {
 
-    hometestobj  = new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
 
-    hometestobj .GetLoginPage();
-    loginpageobj = new LoginPage(getDriver());
+        hometestobj.GetLoginPage();
+        loginpageobj = new LoginPage(getDriver());
 
-    loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
+        loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
 
-    hometestobj .GetHomepage();
-    pageobj = new PageBase(getDriver());
-    pageobj.SearchProduct();
+        hometestobj.GetHomepage();
+        pageobj = new PageBase(getDriver());
+        pageobj.SearchProduct();
 
-    hometestobj .Getproducts_Comparelist();
-    Thread.sleep(3000);
-    soft.assertEquals(hometestobj .GetSucessMessage()," Success: You have added iPod Touch to your product comparison!");
+        hometestobj.Getproducts_Comparelist();
+        Thread.sleep(3000);
+        soft.assertEquals(hometestobj.GetSucessMessage(), " Success: You have added iPod Touch to your product comparison!");
 
     }
 
@@ -141,10 +138,10 @@ public class HomePage_Base extends  TestBase {
     @Test
     public void Checkout_P() throws InterruptedException {
 
-        hometestobj  = new Homepage(getDriver());
+        hometestobj = new Homepage(getDriver());
 
 
-        hometestobj .GetLoginPage();
+        hometestobj.GetLoginPage();
         loginpageobj = new LoginPage(getDriver());
 
         loginpageobj.Loginform(TC02_Register.email, TC02_Register.password);
@@ -153,19 +150,19 @@ public class HomePage_Base extends  TestBase {
         pageobj = new PageBase(getDriver());
         pageobj.SearchProduct();
 
-        hometestobj .Getproducts_Add();
+        hometestobj.Getproducts_Add();
 
-        hometestobj .Checkout_Page();
+        hometestobj.Checkout_Page();
 
-        hometestobj .ClickButtonCheckout();
-        hometestobj .Payment_Page("Nadaerrr","Rehannnn","Class","eee333","Gizaa","11144","Hii","bye");
+        hometestobj.ClickButtonCheckout();
+        hometestobj.Payment_Page("Naderolian", "Rehanlia", "XYZ Company", "123 Maplear Laneuyy, Apt 4B", "Berat", "11144", "please call me once coming", "Thanks for support customer help");
         Thread.sleep(3000);
         Assert.assertTrue(getDriver().getPageSource().contains("Your order has been placed!"));
 
     }
 
 
-    }
+}
 
 
 

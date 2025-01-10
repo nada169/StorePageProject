@@ -2,28 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SPRINT-1-TESTCASES">
     <parameter name="browsername" value=""></parameter>
-   <test name="Register With Valid Data" >
+    <test name="Register With Valid Data">
 
-      <classes>
-          <class name="testcases.TC02_Register">
+        <classes>
+            <class name="testcases.TC02_Register">
 
-              <methods>
-                  <include name="RegisterWithValidData_P" />
+                <methods>
+                    <include name="RegisterWithValidData_P"/>
 
-              </methods>
-          </class>
+                </methods>
+            </class>
 
-      </classes>
+        </classes>
 
 
-</test>
+    </test>
 
-    <test name="Login With Valid Data" >
+    <test name="Login With Valid Data">
         <classes>
             <class name="testcases.TC01_Login">
 
                 <methods>
-                    <include name="LoginWithValidData_P" />
+                    <include name="LoginWithValidData_P"/>
 
                 </methods>
             </class>
@@ -32,12 +32,12 @@
 
 
     </test>
-    <test name="ResetPass" >
+    <test name="ResetPass">
         <classes>
             <class name="testcases.TC03_ForgetPass">
 
                 <methods>
-                    <include name="ForgetPass_P" />
+                    <include name="ForgetPass_P"/>
 
                 </methods>
             </class>
@@ -47,12 +47,12 @@
 
     </test>
 
-    <test name="SearchProduct" >
+    <test name="SearchProduct">
         <classes>
             <class name="testcases.HomePage_Base">
 
                 <methods>
-                    <include name="SearchProduct_P" />
+                    <include name="SearchProduct_P"/>
 
                 </methods>
             </class>
@@ -62,12 +62,12 @@
 
     </test>
 
-    <test name="Change Currency" >
+    <test name="Change Currency">
         <classes>
             <class name="testcases.HomePage_Base">
 
                 <methods>
-                    <include name="ChangeCurrency_P" />
+                    <include name="ChangeCurrency_P"/>
 
                 </methods>
             </class>

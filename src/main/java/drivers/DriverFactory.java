@@ -15,7 +15,6 @@ import java.util.Map;
 public class DriverFactory {
 
 
-
     public static WebDriver getNewInstance(String browserName) {
         ChromeOptions chromeOptions;
         DesiredCapabilities capabilities;
@@ -68,7 +67,6 @@ public class DriverFactory {
                 return new ChromeDriver(chromeOptions);
         }
     }
-
 
 
 }

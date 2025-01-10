@@ -134,7 +134,7 @@ public class HomePage_Base extends TestBase {
 
     }
 
-
+    //checkout
     @Test
     public void Checkout_P() throws InterruptedException {
 

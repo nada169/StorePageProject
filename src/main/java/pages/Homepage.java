@@ -185,7 +185,7 @@ public class Homepage {
 
     }
 
-
+    //get sucess message
     public String GetSucessMessage() {
 
     WebElement message= driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));

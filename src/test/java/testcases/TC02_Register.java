@@ -14,10 +14,10 @@ public class TC02_Register extends TestBase {
     static Faker faker = new Faker();
     String firstName = generateRandomFirstName();
     String lastName = faker.name().lastName();
-    static String email = faker.internet().emailAddress();
+    static String email ;
     String phone = generateRandomPhoneNumber();
-    static String password = faker.internet().password(8, 16);  // Password length between 8 and 16 characters
-    String confirmPassword = password;
+    static String password ;  // Password length between 8 and 16 characters
+
 
 
     Homepage home;
@@ -25,11 +25,12 @@ public class TC02_Register extends TestBase {
 
     @Test(priority = 1)
     public void RegisterWithValidData_P() {
-
+        email= faker.internet().emailAddress();
+        password = faker.internet().password(8, 16);
         home = new Homepage(getDriver());
         register = new RegisterationPage(getDriver());
         home.GetRegisteration();
-        register.Generatedata(firstName, phone, lastName, email, password, confirmPassword);
+        register.Generatedata(firstName, phone, lastName, email, password, password);
         home.Getlogout();
 
 

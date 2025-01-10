@@ -21,11 +21,11 @@ Website.
 
 ### Local testing execution example
 
-![Local testing execution example](example_filed_test_with_report.gif)
+![Local testing execution example](Sequential Execution.gif)
 
 ### Parallel testing execution example
 
-![Parallel testing execution example](selenium-grid-execution.gif)
+![Parallel testing execution example](Parallel Execution.gif)
 
 ## Features
 

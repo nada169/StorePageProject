@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SPRINT-1-TESTCASES">
     <parameter name="browsername" value=""></parameter>
+
     <test name="Register With Valid Data">
 
         <classes>
@@ -77,5 +78,4 @@
 
     </test>
 
-
-</suite>
+    </suite>

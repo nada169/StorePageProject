@@ -18,14 +18,14 @@ public class Homepage {
 
 
     @FindBy(xpath = "(//li/a/span)[1]")
-    WebElement X;
+    WebElement loginicon;
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=account/login']")
-    WebElement Y;
+    WebElement loginbtn;
 
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=account/register']")
-    WebElement C;
+    WebElement Registerbtn;
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=account/logout']")
     WebElement logout;
@@ -35,7 +35,7 @@ public class Homepage {
 
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=common/home']")
-    WebElement lh;
+    WebElement home;
 
     @FindBy(xpath = "//div[@class='row'][3]/div[1]/div[@class='product-thumb']/div[2]/div[@class='button-group']/button[1]")
     WebElement btnone;
@@ -46,11 +46,11 @@ public class Homepage {
     WebElement btnthree;
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=checkout/cart']")
-    WebElement chhheck;
+    WebElement cart;
 
 
     @FindBy(xpath = "//a[@href='https://tutorialsninja.com/demo/index.php?route=checkout/checkout']")
-    WebElement out_Button;
+    WebElement checkoutbtn;
     @FindBy(xpath = "//input[@name='firstname']")
     WebElement Fname;
     @FindBy(xpath = "//input[@name='lastname']")
@@ -63,7 +63,7 @@ public class Homepage {
 
 
     @FindBy(xpath = "//input[@name='city']")
-    WebElement vvvv;
+    WebElement Ci;
 
     @FindBy(xpath = "//input[@name='postcode']")
     WebElement P_code;
@@ -98,24 +98,24 @@ public class Homepage {
 
 
     public void GetLoginPage() {
-        X.click();
-        Y.click();
+        loginicon.click();
+        loginbtn.click();
     }
 
     public void GetRegisteration() {
-        X.click();
-        C.click();
+        loginicon.click();
+        Registerbtn.click();
 
     }
 
     public void Getlogout() {
-        X.click();
+        loginicon.click();
         logout.click();
     }
 
 
     public void GetHomepage() {
-        lh.click();
+        home.click();
     }
 
     public void Getproducts_Add() {
@@ -135,22 +135,22 @@ public class Homepage {
     }
 
     public void Checkout_Page() {
-        chhheck.click();
+        cart.click();
 
 
     }
 
     public void ClickButtonCheckout() {
-        out_Button.click();
+        checkoutbtn.click();
 
     }
 
-    public void Payment_Page(String F, String L, String C, String A, String City, String Postcode, String Comment, String c2) throws InterruptedException {
+    public void Payment_Page(String F, String L, String C, String A, String City, String Postcode, String Comment, String anothercomment) throws InterruptedException {
         Fname.sendKeys(F);
         lnam.sendKeys(L);
         Cname.sendKeys(C);
         Adress1.sendKeys(A);
-        vvvv.sendKeys(City);
+        Ci.sendKeys(City);
         P_code.sendKeys(Postcode);
         Thread.sleep(3000);
         Select selectCountry = new Select(countryDropdown);
@@ -163,7 +163,7 @@ public class Homepage {
         Continue_ShipingAddress.click();
         co.sendKeys(Comment);
         Continue_Shipingmethod.click();
-        co.sendKeys(c2);
+        co.sendKeys(anothercomment);
         Agree_Check.click();
         Continue_PaymentMethod.click();
         Confirm_Button.click();

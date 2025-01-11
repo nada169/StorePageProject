@@ -21,11 +21,11 @@ Website.
 
 ### Local testing execution example
 
-![Local testing execution example](sequential_execution.gif)
+![Local testing execution example](sequential.gif)
 
 ### Parallel testing execution example
 
-![Parallel testing execution example](parallel_execution.gif)
+![Parallel testing execution example](parallel.gif)
 
 ## Features
 

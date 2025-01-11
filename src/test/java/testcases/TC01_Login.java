@@ -11,7 +11,7 @@ public class TC01_Login extends TestBase {
     Homepage homeobj;
     LoginPage loginobj;
 
-    @Test(priority = 2)
+    @Test
     public void LoginWithValidData_P() throws InterruptedException {
 
         homeobj = new Homepage(getDriver());

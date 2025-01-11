@@ -23,7 +23,7 @@ public class TC02_Register extends TestBase {
     Homepage home;
     RegisterationPage register;
 
-    @Test(priority = 1)
+    @Test
     public void RegisterWithValidData_P() {
         email= faker.internet().emailAddress();
         password = faker.internet().password(8, 16);
